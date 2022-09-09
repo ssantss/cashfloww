@@ -26,7 +26,7 @@ export default {
         new Promise((resolve) => {
           setTimeout(() => {
             resolve(import("./components/HomeVue.vue"));
-          }, 2500);
+          }, 1000);
         })
     ),
   },
