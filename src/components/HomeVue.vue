@@ -15,7 +15,7 @@
       </IndexVue>
     </template>
     <template #movements>
-      <MovementsVue :movements="movements"></MovementsVue>
+      <MovementsVue :movements="movements" @remove="remove"></MovementsVue>
     </template>
   </LayoutVue>
 </template>
@@ -136,6 +136,10 @@ export default {
   methods: {
     create(movement) {
       this.movements.push(movement);
+    },
+    remove(id) {
+      const index = this.movements.findIndex((m) => m.id === id);
+      this.movements.splice(index, 1);
     },
   },
 };
